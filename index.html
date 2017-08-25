@@ -11,15 +11,67 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <body class="container-fluid">
+
+      <form id="sign-in">
+        <div class="form-group">
+          <h3 class="legend">Sign in!</h3>
+          <label>Email Address:</label>
+          <input type="email" name="credentials[email]" id="sign-in-email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" value="Sign in!">
+          <p class="hidden" id="sign-in-error">Email or Password Incorrect</p>
+        </div>
+      </form>
+
+      <form id="sign-out">
+        <div class="form-group">
+          <h3 class="legend">Sign Out!</h3>
+          <input type="submit" name="submit" value="Sign out!">
+        </div>
+      </form>
+
+      <form id="sign-up">
+        <div class="form-group">
+          <h3 class="legend">Sign up!</h3>
+          <label>Email Address:</label>
+          <input type="email" name="credentials[email]" id="sign-up-email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" value="Sign up!">
+          <p class="hidden" id="sign-up-error">Email Taken or Passwords Don't Match</p>
+        </div>
+      </form>
+
+      <form id="change-password">
+        <div class="form-group">
+          <h3 class="legend">Change Password!</h3>
+          <label>Old Password:</label>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+        </div>
+        <div class="form-group">
+          <label>New Password:</label>
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" value="Change Password">
+          <p class="hidden" id="change-password-success">Password Changed</p>
+          <p class="hidden" id="change-password-failure">Incorrect Info</p>
+        </div>
+      </form>
     </body>
 </html>
