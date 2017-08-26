@@ -51,10 +51,28 @@ const getCampaigns = function () {
   })
 }
 
+const createCampaign = function (campaignName, campaignDay) {
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/campaigns/',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'campaign': {
+        'name': campaignName,
+        'scheduled_day': campaignDay,
+        'user_id': app.user.id
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  getCampaigns
+  getCampaigns,
+  createCampaign
 }
