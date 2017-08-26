@@ -44,10 +44,10 @@ const changePassword = function (data) {
 const getCampaigns = function () {
   return $.ajax({
     method: 'GET',
-    url: app.host + '/campaigns',
+    url: app.host + '/campaigns/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
+    }
   })
 }
 

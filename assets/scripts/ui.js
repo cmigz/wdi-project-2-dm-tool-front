@@ -25,7 +25,9 @@ const changePasswordSuccess = () => {
 }
 
 const getCampaignsSuccess = (data) => {
-  console.log(data)
+  const campaigns = data.campaigns
+  console.table(campaigns)
+  $('#print-campaigns').html(campaigns)
 }
 
 const failure = (error) => {
