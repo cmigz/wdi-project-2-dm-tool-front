@@ -41,9 +41,20 @@ const changePassword = function (data) {
   })
 }
 
+const getCampaigns = function () {
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/campaigns',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  getCampaigns
 }

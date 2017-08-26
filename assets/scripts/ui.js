@@ -24,6 +24,10 @@ const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
 }
 
+const getCampaignsSuccess = (data) => {
+  console.log(data)
+}
+
 const failure = (error) => {
   console.error(error)
 }
@@ -32,5 +36,7 @@ module.exports = {
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
+  changePasswordSuccess,
+  getCampaignsSuccess,
   failure
 }
