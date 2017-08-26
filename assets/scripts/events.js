@@ -45,12 +45,25 @@ const onGetCampaigns = function (event) {
     .fail(ui.failure)
 }
 
+const onCreateCampaign = function (event) {
+  event.preventDefault()
+  console.log(event)
+  const campaignName = $('#campaign-name').val()
+  const campaignDay = $('#campaign-day').val()
+  console.log(campaignName)
+  console.log(campaignDay)
+  api.createCampaign(campaignName, campaignDay)
+    .done(ui.createCampaignSuccess)
+    .fail(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#get-campaigns').on('click', onGetCampaigns)
+  $('#create-campaign').on('submit', onCreateCampaign)
 }
 module.exports = {
   addHandlers

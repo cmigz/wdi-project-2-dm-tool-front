@@ -30,6 +30,10 @@ const getCampaignsSuccess = (data) => {
   $('#print-campaigns').html(campaigns)
 }
 
+const createCampaignSuccess = () => {
+  console.log('Created a Campaign')
+}
+
 const failure = (error) => {
   console.error(error)
 }
@@ -40,5 +44,6 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   getCampaignsSuccess,
+  createCampaignSuccess,
   failure
 }

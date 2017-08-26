@@ -13,6 +13,7 @@
     </head>
 
     <body class="container-fluid">
+
       <!-- AUTH STUFF -->
     <div>
       <form id="sign-in">
@@ -74,10 +75,34 @@
           <p class="hidden" id="change-password-failure">Incorrect Info</p>
         </div>
       </form>
+
+      <!-- Get stuff buttons -->
       <div class="print-campaigns"></div>
       <form id="get-campaigns">
         <div class="form-group">
           <button type="button" name="button" class="btn btn-default">View Campaigns</button>
+        </div>
+      </form>
+      <div class="print encounters"></div>
+      <form id="get-encounters">
+        <div class="form-group">
+          <button type="button" name="button" class="btn btn-default">View Campaigns</button>
+        </div>
+      </form>
+
+      <!-- Make stuff forms -->
+      <form id="create-campaign">
+        <div class="form-group">
+          <h3 class="legend">Create a Campaign!</h3>
+          <label>Campaign Name</label>
+            <input type="text" name="campaign[name]" value="" id="campaign-name" placeholder="Campaign Name">
+        </div>
+        <div class="form-group">
+          <label>Scheduled Day</label>
+            <input type="text" name="campaign[scheduled_day]" value="" id="campaign-day" placeholder="Scheduled Day">
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submit" value="Create Campaign" class="btn btn-default">
         </div>
       </form>
     </div>
