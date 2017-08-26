@@ -38,11 +38,19 @@ const onChangePassword = function (event) {
     .fail(ui.failure)
 }
 
+const onGetCampaigns = function (event) {
+  event.preventDefault()
+  api.getCampaigns()
+    .done(ui.getCampaignsSuccess)
+    .fail(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#get-campaigns').on('click', onGetCampaigns)
 }
 module.exports = {
   addHandlers
