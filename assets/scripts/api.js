@@ -131,6 +131,26 @@ const updateEncounter = function (campaignName, encounterName, updateName, updat
   })
 }
 
+const deleteCampaign = function (campaignName) {
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + campaignName,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const deleteEncounter = function (campaignName, encounterName) {
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + campaignName + '/encounters/' + encounterName,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -141,5 +161,7 @@ module.exports = {
   createCampaign,
   createEncounter,
   updateCampaign,
-  updateEncounter
+  updateEncounter,
+  deleteCampaign,
+  deleteEncounter
 }

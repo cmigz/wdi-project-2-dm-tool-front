@@ -56,7 +56,7 @@ const onGetEncounters = function (event) {
 const onCreateCampaign = function (event) {
   event.preventDefault()
   console.log(event)
-  const campaignName = $('#campaign-name').val()
+  const campaignName = $('#campaign-id').val()
   const campaignDay = $('#campaign-day').val()
   console.log(campaignName)
   console.log(campaignDay)
@@ -100,6 +100,23 @@ const onUpdateEncounter = function (event) {
     .fail(ui.failure)
 }
 
+const onDeleteCampaign = function (event) {
+  event.preventDefault()
+  const campaignName = $('#camp-delete').val()
+  api.deleteCampaign(campaignName)
+    .done(ui.deleteCampaignSuccess)
+    .fail(ui.failure)
+}
+
+const onDeleteEncounter = function (event) {
+  event.preventDefault()
+  const campaignName = $('#campName-delete').val()
+  const encounterName = $('#encountName-delete').val()
+  api.deleteEncounter(campaignName, encounterName)
+    .done(ui.deleteEncounterSuccess)
+    .fail(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -111,6 +128,8 @@ const addHandlers = () => {
   $('#create-encounter').on('submit', onCreateEncounter)
   $('#update-campaign').on('submit', onUpdateCampaign)
   $('#update-encounter').on('submit', onUpdateEncounter)
+  $('#delete-campaign').on('submit', onDeleteCampaign)
+  $('#delete-encounter').on('submit', onDeleteEncounter)
 }
 module.exports = {
   addHandlers

@@ -54,6 +54,14 @@ const updateEncounterSuccess = (data) => {
   console.log('Updated Encounter')
 }
 
+const deleteCampaignSuccess = () => {
+  console.log('Deleted a Campaign')
+}
+
+const deleteEncounterSuccess = () => {
+  console.log('Deleted an Encounter')
+}
+
 const failure = (error) => {
   console.error(error)
 }
@@ -69,5 +77,7 @@ module.exports = {
   createEncounterSuccess,
   updateCampaignSuccess,
   updateEncounterSuccess,
+  deleteCampaignSuccess,
+  deleteEncounterSuccess,
   failure
 }

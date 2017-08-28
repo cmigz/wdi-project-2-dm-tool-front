@@ -177,18 +177,45 @@
         </div>
         <div class="form-group">
           <label>Updated CR:</label>
-          <input type="text" name="encounter[CR]" id="updateCR" placeholder="New Day">
+          <input type="text" name="encounter[CR]" id="updateCR" placeholder="New CR">
         </div>
         <div class="form-group">
           <label>Updated Books:</label>
-          <input type="text" name="encounter[books]" id="updateBooks" placeholder="New Day">
+          <input type="text" name="encounter[books]" id="updateBooks" placeholder="New Books">
         </div>
         <div class="form-group">
           <label>Updated Description:</label>
-          <input type="text" name="encounter[description]" id="updateDesc" placeholder="New Day">
+          <input type="text" name="encounter[description]" id="updateDesc" placeholder="New Description">
         </div>
         <div class="form-group">
           <input type="submit" name="submit" value="Update Encounter" class="btn btn-default">
+        </div>
+      </form>
+
+      <!-- DELETE STUFF -->
+      <form id="delete-campaign">
+        <div class="form-group">
+          <h3 class="legend">Delete a Campaign</h3>
+          <label>Campaign Name:</label>
+          <input type="text" name="campaign[name]" id="camp-delete" placeholder="Campaign Name">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" value="Delete Campaign" class="btn btn-default">
+        </div>
+      </form>
+
+      <form id="delete-encounter">
+        <div class="form-group">
+          <h3 class="legend">Delete an Encounter</h3>
+          <label>Campaign Name:</label>
+          <input type="text" name="campaign[name]" id="campName-delete" placeholder="Campaign Name">
+        </div>
+        <div class="form-group">
+          <label>Encounter Name</label>
+          <input type="text" name="encounter[name]" id="encountName-delete" placeholder="Encounter Name">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" value="Delete Encounter" class="btn btn-default">
         </div>
       </form>
 
