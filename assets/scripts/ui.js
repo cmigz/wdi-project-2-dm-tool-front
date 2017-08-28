@@ -25,13 +25,25 @@ const changePasswordSuccess = () => {
 }
 
 const getCampaignsSuccess = (data) => {
+  console.log(data)
   const campaigns = data.campaigns
   console.table(campaigns)
   $('#print-campaigns').html(campaigns)
 }
 
+const getEncountersSuccess = (data) => {
+  console.log(data)
+  const encounters = data.encounters
+  console.table(encounters)
+  $('#print-encounters').html(encounters)
+}
+
 const createCampaignSuccess = () => {
   console.log('Created a Campaign')
+}
+
+const createEncounterSuccess = () => {
+  console.log('Created an Encounter')
 }
 
 const failure = (error) => {
@@ -44,6 +56,8 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   getCampaignsSuccess,
+  getEncountersSuccess,
   createCampaignSuccess,
+  createEncounterSuccess,
   failure
 }

@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://dm-tool-api.herokuapp.com'
+    production: 'http://localhost:4741'
   }
 }
 

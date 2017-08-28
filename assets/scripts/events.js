@@ -45,6 +45,14 @@ const onGetCampaigns = function (event) {
     .fail(ui.failure)
 }
 
+const onGetEncounters = function (event) {
+  event.preventDefault()
+  const campaignName = $('#reference-name').val()
+  api.getEncounters(campaignName)
+    .done(ui.getEncountersSuccess)
+    .fail(ui.failure)
+}
+
 const onCreateCampaign = function (event) {
   event.preventDefault()
   console.log(event)
@@ -57,13 +65,27 @@ const onCreateCampaign = function (event) {
     .fail(ui.failure)
 }
 
+const onCreateEncounter = function (event) {
+  event.preventDefault()
+  const campaignId = $('#encounter-campaignID').val()
+  const encounterName = $('#encounter-name').val()
+  const encounterCr = $('#encounter-cr').val()
+  const encounterBooks = $('#encounter-books').val()
+  const encounterDesc = $('#encounter-description').val()
+  api.createEncounter(campaignId, encounterName, encounterCr, encounterBooks, encounterDesc)
+    .done(ui.createEncounterSuccess)
+    .fail(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#get-campaigns').on('click', onGetCampaigns)
+  $('#get-encounters').on('submit', onGetEncounters)
   $('#create-campaign').on('submit', onCreateCampaign)
+  $('#create-encounter').on('submit', onCreateEncounter)
 }
 module.exports = {
   addHandlers

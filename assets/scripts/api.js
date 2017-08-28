@@ -51,6 +51,16 @@ const getCampaigns = function () {
   })
 }
 
+const getEncounters = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + data + '/encounters/',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 const createCampaign = function (campaignName, campaignDay) {
   return $.ajax({
     method: 'POST',
@@ -68,11 +78,32 @@ const createCampaign = function (campaignName, campaignDay) {
   })
 }
 
+const createEncounter = function (campaignId, encounterName, encounterCr, encounterBooks, encounterDesc) {
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/encounters/',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'encounter': {
+        'name': encounterName,
+        'CR': encounterCr,
+        'books': encounterBooks,
+        'description': encounterDesc,
+        'campaign_id': campaignId
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   getCampaigns,
-  createCampaign
+  getEncounters,
+  createCampaign,
+  createEncounter
 }

@@ -85,10 +85,15 @@
           <button type="button" name="button" class="btn btn-default">View Campaigns</button>
         </div>
       </form>
-      <div class="print encounters"></div>
+      <div class="print-encounters"></div>
       <form id="get-encounters">
         <div class="form-group">
-          <button type="button" name="button" class="btn btn-default">View Campaigns</button>
+          <h3>Get Encounters</h3>
+          <label>Campaign Name:</label>
+          <input type="text" name ="campaign[name]" id="reference-name" placeholder="Campaign Name">
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" class="btn btn-default">
         </div>
       </form>
 
@@ -96,15 +101,42 @@
       <form id="create-campaign">
         <div class="form-group">
           <h3 class="legend">Create a Campaign!</h3>
-          <label>Campaign Name</label>
-            <input type="text" name="campaign[name]" value="" id="campaign-name" placeholder="Campaign Name">
+          <label>Campaign Name:</label>
+            <input type="text" name="campaign[name]" value="" id="campaign-id" placeholder="Campaign Name">
         </div>
         <div class="form-group">
-          <label>Scheduled Day</label>
+          <label>Scheduled Day:</label>
             <input type="text" name="campaign[scheduled_day]" value="" id="campaign-day" placeholder="Scheduled Day">
         </div>
         <div class="form-group">
             <input type="submit" name="submit" value="Create Campaign" class="btn btn-default">
+        </div>
+      </form>
+
+      <form id="create-encounter">
+        <div class="form-group">
+          <h3 class="legend">Create an Encounter!</h3>
+          <label>Campaign Reference ID:</label>
+          <input type="text" name="encounter[campaign_id]" id="encounter-campaignID" placeholder="Reference ID">
+        </div>
+        <div class="form-group">
+          <label>Encounter Name:</label>
+          <input type="text" name="encounter[name]" id="encounter-name" placeholder="Encounter Name">
+        </div>
+        <div class="form-group">
+          <label>Challenge Rating:</label>
+          <input type="text" name="encounter[CR]" id="encounter-cr" placeholder="Encounter CR">
+        </div>
+        <div class="form-group">
+          <label>Books Used:</label>
+          <input type="text" name="encounter[books]" id="encounter-books" placeholder="Books Used">
+        </div>
+        <div class="form-group">
+          <label>Encounter Description:</label>
+          <textarea form="create-encounter" name="encounter[description]" id="encounter-description" rows="5" cols="40" placeholder="Write your encounter's description here"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submit" value="Create Encounter" class="btn btn-default">
         </div>
       </form>
     </div>
