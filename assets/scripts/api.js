@@ -44,7 +44,7 @@ const changePassword = function (data) {
 const getCampaigns = function () {
   return $.ajax({
     method: 'GET',
-    url: app.host + '/campaigns/' + app.user.id,
+    url: app.host + '/users/' + app.user.id + '/campaigns/',
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
@@ -81,7 +81,7 @@ const createCampaign = function (campaignName, campaignDay) {
 const createEncounter = function (campaignId, encounterName, encounterCr, encounterBooks, encounterDesc) {
   return $.ajax({
     method: 'POST',
-    url: app.host + '/encounters/',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + campaignId + '/encounters',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -90,8 +90,7 @@ const createEncounter = function (campaignId, encounterName, encounterCr, encoun
         'name': encounterName,
         'CR': encounterCr,
         'books': encounterBooks,
-        'description': encounterDesc,
-        'campaign_id': campaignId
+        'description': encounterDesc
       }
     }
   })
