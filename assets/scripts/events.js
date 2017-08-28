@@ -77,6 +77,29 @@ const onCreateEncounter = function (event) {
     .fail(ui.failure)
 }
 
+const onUpdateCampaign = function (event) {
+  event.preventDefault()
+  const campaignName = $('#campname').val()
+  const updateName = $('#updateName').val()
+  const updateDay = $('#updateDay').val()
+  api.updateCampaign(campaignName, updateName, updateDay)
+    .done(ui.updateCampaignSuccess)
+    .fail(ui.failure)
+}
+
+const onUpdateEncounter = function (event) {
+  event.preventDefault()
+  const campaignName = $('#campname-encounterUp').val()
+  const encounterName = $('#encountname-encounterUp').val()
+  const updateName = $('#updateName-encountUp').val()
+  const updateCr = $('#updateCR').val()
+  const updateBooks = $('#updateBooks').val()
+  const updateDesc = $('#updateDesc').val()
+  api.updateEncounter(campaignName, encounterName, updateName, updateCr, updateBooks, updateDesc)
+    .done(ui.updateEncounterSuccess)
+    .fail(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -86,6 +109,8 @@ const addHandlers = () => {
   $('#get-encounters').on('submit', onGetEncounters)
   $('#create-campaign').on('submit', onCreateCampaign)
   $('#create-encounter').on('submit', onCreateEncounter)
+  $('#update-campaign').on('submit', onUpdateCampaign)
+  $('#update-encounter').on('submit', onUpdateEncounter)
 }
 module.exports = {
   addHandlers

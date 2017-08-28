@@ -38,12 +38,20 @@ const getEncountersSuccess = (data) => {
   $('#print-encounters').html(encounters)
 }
 
-const createCampaignSuccess = () => {
+const createCampaignSuccess = (data) => {
   console.log('Created a Campaign')
 }
 
-const createEncounterSuccess = () => {
+const createEncounterSuccess = (data) => {
   console.log('Created an Encounter')
+}
+
+const updateCampaignSuccess = (data) => {
+  console.log('Updated Campaign')
+}
+
+const updateEncounterSuccess = (data) => {
+  console.log('Updated Encounter')
 }
 
 const failure = (error) => {
@@ -59,5 +67,7 @@ module.exports = {
   getEncountersSuccess,
   createCampaignSuccess,
   createEncounterSuccess,
+  updateCampaignSuccess,
+  updateEncounterSuccess,
   failure
 }

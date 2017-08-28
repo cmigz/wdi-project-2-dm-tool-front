@@ -96,6 +96,41 @@ const createEncounter = function (campaignId, encounterName, encounterCr, encoun
   })
 }
 
+const updateCampaign = function (campaignName, updateName, updateDay) {
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + campaignName,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'campaign': {
+        'name': updateName,
+        'scheduled_day': updateDay,
+        'user_id': app.user.id
+      }
+    }
+  })
+}
+
+const updateEncounter = function (campaignName, encounterName, updateName, updateCr, updateBooks, updateDesc) {
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/users/' + app.user.id + '/campaigns/' + campaignName + '/encounters/' + encounterName,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'encounter': {
+        'name': updateName,
+        'CR': updateCr,
+        'books': updateBooks,
+        'description': updateDesc
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -104,5 +139,7 @@ module.exports = {
   getCampaigns,
   getEncounters,
   createCampaign,
-  createEncounter
+  createEncounter,
+  updateCampaign,
+  updateEncounter
 }
