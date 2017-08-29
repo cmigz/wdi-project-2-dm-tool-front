@@ -130,6 +130,13 @@ const addHandlers = () => {
   $('#update-encounter').on('submit', onUpdateEncounter)
   $('#delete-campaign').on('submit', onDeleteCampaign)
   $('#delete-encounter').on('submit', onDeleteEncounter)
+  $('#oldUser').on('click', ui.hideSignUp)
+  $('#chngPwd').on('click', ui.showChngPwd)
+  $('#crtCamp').on('click', ui.showCreates)
+  $('#viewCamp').on('click', ui.showViews)
+  $('#editCamp').on('click', ui.showEdits)
+  $('#deleteCamp').on('click', ui.showDeletes)
+  $('.updated, .deleted, .created, .changed').on('click', ui.hidePops)
 }
 module.exports = {
   addHandlers

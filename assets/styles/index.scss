@@ -1,2 +1,29 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  text-align: center;
+  background-image: url('../images/big-gross-dragon.jpg');
+}
+
+.gray {
+  background-color: rgba(240, 240, 250, .5);
+}
+
+table {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+table td + td {
+  border-left: 2px solid black;
+}
+table th {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.red {
+  color: rgb(210, 0, 255);
+}

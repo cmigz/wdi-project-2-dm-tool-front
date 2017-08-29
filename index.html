@@ -13,10 +13,10 @@
     </head>
 
     <body class="container-fluid">
-
+      <h1>DM Planner</h1>
       <!-- AUTH STUFF -->
 
-      <form id="sign-in">
+      <form id="sign-in" class="hidden">
         <div class="form-group">
           <h3 class="legend">Sign in!</h3>
           <label>Email Address:</label>
@@ -32,14 +32,23 @@
         </div>
       </form>
 
-      <form id="sign-out">
+      <form id="sign-out" class="hidden">
         <div class="form-group">
-          <h3 class="legend">Sign Out!</h3>
+          <h3 class="legend"></h3>
           <input type="submit" name="submit" value="Sign out!" class="btn btn-default">
+        </div>
+        <div class="form-group">
+          <input type="button" value="Change Password" class="btn btn-default" id="chngPwd">
+        </div>
+        <div class="form-group">
+          <input type="button" value="Create Campaigns and Encounters" class="btn btn-default" id="crtCamp">
+          <input type="button" value="View Campaigns and Encounters" class="btn btn-default" id="viewCamp">
+          <input type="button" value="Edit Campaigns and Encounters" class="btn btn-default" id="editCamp">
+          <input type="button" value="Delete Campaigns and Encounters" class="btn btn-default" id="deleteCamp">
         </div>
       </form>
 
-      <form id="sign-up">
+      <form id="sign-up" class="">
         <div>
         <div class="form-group">
           <h3 class="legend">Sign up!</h3>
@@ -57,11 +66,12 @@
       </div>
         <div class="form-group">
           <input type="submit" name="submit" value="Sign up!" class="btn btn-default">
+          <input type="button" value="Already a User" class="btn btn-default" id="oldUser">
           <p class="hidden" id="sign-up-error">Email Taken or Passwords Don't Match</p>
         </div>
       </form>
 
-      <form id="change-password">
+      <form id="change-password" class="hidden">
         <div class="form-group">
           <h3 class="legend">Change Password!</h3>
           <label>Old Password:</label>
@@ -78,16 +88,37 @@
         </div>
       </form>
 
+      <h1 class="encnt-update-message hidden red">UPDATED ENCOUNTER SUCCESSFULLY!</h1>
+      <h1 class="camp-update-message hidden red">UPDATED CAMPAIGN SUCCESSFULLY!</h1>
+      <h1 class="encnt-deleted-message hidden red">DELETED ENCOUNTER SUCCESSFULLY!</h1>
+      <h1 class="camp-deleted-message hidden red">DELETED CAMPAIGN SUCCESSFULLY!</h1>
+      <h1 class="encnt-created-message hidden red">CREATED ENCOUNTER SUCCESSFULLY!</h1>
+      <h1 class="camp-created-message hidden red">CREATED CAMPAIGN SUCCESSFULLY!</h1>
+      <h1 class="pswd-change-message hidden red">PASSWORD CHANGED SUCCESSFULLY!</h1>
+      <div class="updated hidden">
+        <img src="./assets/images/fat-dragon.png" alt="Fat Dragon">
+      </div>
+      <div class="deleted hidden">
+        <img src="./assets/images/sad-dragon.png" alt="Sad Dragon">
+      </div>
+      <div class="created hidden">
+        <img src="./assets/images/happy-dragon.png" alt="Happy Dragon">
+      </div>
+      <div class="changed hidden">
+        <img src="./assets/images/thumbs-up-dragon.jpg" alt="Thumbs Up Dragon">
+      </div>
+
       <!-- Get stuff buttons -->
       <div class="print-campaigns"></div>
-      <form id="get-campaigns">
+      <div class="gray">
+      <form id="get-campaigns" class="hidden">
         <div class="form-group">
           <h3 class="legend">Get Campaigns</h3>
           <button type="button" name="button" class="btn btn-default">Get Campaigns</button>
         </div>
       </form>
       <div class="print-encounters"></div>
-      <form id="get-encounters">
+      <form id="get-encounters" class="hidden">
         <div class="form-group">
           <h3 class="legend">Get Encounters</h3>
           <label>Campaign Name:</label>
@@ -97,9 +128,11 @@
           <input type="submit" name="submit" value="Get Encounters" class="btn btn-default">
         </div>
       </form>
+    </div>
 
       <!-- Make stuff forms -->
-      <form id="create-campaign">
+      <div class="gray">
+      <form id="create-campaign" class="hidden">
         <div class="form-group">
           <h3 class="legend">Create a Campaign!</h3>
           <label>Campaign Name:</label>
@@ -110,11 +143,14 @@
             <input type="text" name="campaign[scheduled_day]" value="" id="campaign-day" placeholder="Scheduled Day">
         </div>
         <div class="form-group">
+            <p class="hidden" id="createCamp-success"></p>
+            <p class="hidden" id="createCamp-error"> ERROR! SHIT FUCKED UP!</p>
             <input type="submit" name="submit" value="Create Campaign" class="btn btn-default">
         </div>
       </form>
 
-      <form id="create-encounter">
+
+      <form id="create-encounter" class="hidden col">
         <div class="form-group">
           <h3 class="legend">Create an Encounter!</h3>
           <label>Campaign name:</label>
@@ -140,9 +176,11 @@
             <input type="submit" name="submit" value="Create Encounter" class="btn btn-default">
         </div>
       </form>
+    </div>
 
       <!-- UPDATE STUFF -->
-      <form id="update-campaign">
+      <div class="gray">
+      <form id="update-campaign" class="hidden">
         <div class="form-group">
           <h3 class="legend">Update Campaign</h3>
           <label>Campaign Name:</label>
@@ -150,18 +188,18 @@
         </div>
         <div class="form-group">
           <label>Updated Name:</label>
-          <input type="text" name="" id="updateName" placeholder="New Name">
+          <input type="text" id="updateName" placeholder="New Name">
         </div>
         <div class="form-group">
           <label>Updated Day:</label>
-          <input type="text" name="" id="updateDay" placeholder="New Day">
+          <input type="text" id="updateDay" placeholder="New Day">
         </div>
         <div class="form-group">
           <input type="submit" name="submit" value="Update Campaign" class="btn btn-default">
         </div>
       </form>
 
-      <form id="update-encounter">
+      <form id="update-encounter" class="hidden">
         <div class="form-group">
           <h3 class="legend">Update Encounter</h3>
           <label>Campaign Name:</label>
@@ -185,15 +223,17 @@
         </div>
         <div class="form-group">
           <label>Updated Description:</label>
-          <input type="text" name="encounter[description]" id="updateDesc" placeholder="New Description">
+          <textarea form="update-encounter" name="encounter[description]" id="updateDesc" rows="5" cols="40" placeholder="Write your new description here"></textarea>
         </div>
         <div class="form-group">
           <input type="submit" name="submit" value="Update Encounter" class="btn btn-default">
         </div>
       </form>
+    </div>
 
       <!-- DELETE STUFF -->
-      <form id="delete-campaign">
+      <div class="gray">
+      <form id="delete-campaign" class="hidden">
         <div class="form-group">
           <h3 class="legend">Delete a Campaign</h3>
           <label>Campaign Name:</label>
@@ -204,7 +244,7 @@
         </div>
       </form>
 
-      <form id="delete-encounter">
+      <form id="delete-encounter" class="hidden">
         <div class="form-group">
           <h3 class="legend">Delete an Encounter</h3>
           <label>Campaign Name:</label>
@@ -218,46 +258,28 @@
           <input type="submit" name="submit" value="Delete Encounter" class="btn btn-default">
         </div>
       </form>
+    </div>
+
+    <!-- DISPLAYS -->
+<table id='campaignTable' class='hidden gray'>
+  <tr>
+    <th>Name</th>
+    <th>Scheduled Day</th>
+  </tr>
+</table>
+
+<table id='encounterTable' class='hidden gray'>
+  <tr>
+    <th>Name</th>
+    <th>CR</th>
+    <th>Books</th>
+    <th>Description</th>
+  </tr>
+</table>
+
 
     <br>
     <br>
     <br>
-      <!-- NAVBAR STUFF -->
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Click Me! <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
   </body>
 </html>
