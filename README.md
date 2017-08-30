@@ -1,5 +1,26 @@
 
+# Tic-Tac-Toe!
+### By: Chris Kennelly
 
+## Welcome to my Project!
+
+This Tic-Tac-Toe game showcases the skills I have gained through the first few weeks of General Assembly's Web Development Immersive program.
+
+By building a custom game engine and front end I have made a game that allows people to play 1 vs 1 local tic-tac-toe as well as login so they can keep track of their games.
+
+## Deployed Link
+
+https://chrisak.github.io/tic-tac-toe-project/
+
+## Tech
+
+JavaScript: Used to display results in table form
+HTML: Used to build the frame of the site as well as all the forms for getting/posting info.
+CSS: Used to make things look nice (kind of).
+jQuery: Used to create click handlers as well as control the html for status messages
+Ajax: Used to make calls to the API for sign-in, sign-up, sign-out, changing passwords, getting, posting, updating, and deleting info for encounters and campaigns.
+
+## Planning
 USER STORIES
 -I want to sign-up, sign-in, change-password, and sign-out.
 -I want to create a campaign.
