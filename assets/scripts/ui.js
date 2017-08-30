@@ -23,7 +23,7 @@ const signOutSuccess = () => {
   console.log(app)
   console.log('SIGNED OUT! YEEEEEEEEEAAAAA!')
   $('#sign-out').addClass('hidden')
-  $('#sign-in').removeClass('hidden')
+  $('#sign-up').removeClass('hidden')
 }
 
 const changePasswordSuccess = () => {
