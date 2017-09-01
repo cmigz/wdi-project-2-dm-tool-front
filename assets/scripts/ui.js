@@ -5,23 +5,32 @@ const logic = require('./logic')
 
 const signUpSuccess = (data) => {
   console.log(data)
-  console.log('SIGNED UP! HURRAY!')
   $('#sign-up').addClass('hidden')
   $('#sign-in').removeClass('hidden')
+  $('#sign-up-error').addClass('hidden')
+}
+
+const signUpError = (error) => {
+  console.error(error)
+  $('#sign-up-error').removeClass('hidden')
 }
 
 const signInSuccess = (data) => {
   app.user = data.user
   console.log(app)
-  console.log('SIGNED IN! WOOOOO!')
   $('#sign-in').addClass('hidden')
   $('#sign-out').removeClass('hidden')
+  $('#sign-in-error').addClass('hidden')
+}
+
+const signInError = (error) => {
+  console.error(error)
+  $('#sign-in-error').removeClass('hidden')
 }
 
 const signOutSuccess = () => {
   app.user = null
   console.log(app)
-  console.log('SIGNED OUT! YEEEEEEEEEAAAAA!')
   hidePops()
   $('#sign-out').addClass('hidden')
   $('#sign-up').removeClass('hidden')
@@ -35,25 +44,19 @@ const signOutSuccess = () => {
   $('#delete-encounter').addClass('hidden')
   $('#campaignTable').addClass('hidden')
   $('#encounterTable').addClass('hidden')
-  $('.camp-update-message').addClass('hidden')
-  $('.encnt-update-message').addClass('hidden')
-  $('.updated').addClass('hidden')
-  $('.camp-created-message').addClass('hidden')
-  $('.encnt-created-message').addClass('hidden')
-  $('.created').addClass('hidden')
-  $('.camp-deleted-message').addClass('hidden')
-  $('.encnt-deleted-message').addClass('hidden')
-  $('.deleted').addClass('hidden')
-  $('.pswd-change-message').addClass('hidden')
-  $('.changed').addClass('hidden')
 }
 
 const changePasswordSuccess = () => {
   console.log(app)
-  console.log('Password Successfully Changed.')
   $('.pswd-change-message').removeClass('hidden')
   $('.changed').removeClass('hidden')
+  $('#change-password-error').addClass('hidden')
   $('#change-password').addClass('hidden')
+}
+
+const changePasswordError = (error) => {
+  console.error(error)
+  $('#change-password-error').removeClass('hidden')
 }
 
 const getCampaignsSuccess = (data) => {
@@ -111,6 +114,13 @@ const deleteEncounterSuccess = () => {
 const hideSignUp = () => {
   $('#sign-up').addClass('hidden')
   $('#sign-in').removeClass('hidden')
+  $('#sign-up-error').addClass('hidden')
+}
+
+const hideSignIn = () => {
+  $('#sign-in').addClass('hidden')
+  $('#sign-up').removeClass('hidden')
+  $('#sign-in-error').addClass('hidden')
 }
 
 const showChngPwd = () => {
@@ -251,5 +261,8 @@ module.exports = {
   showEdits,
   showDeletes,
   hidePops,
+  hideSignIn,
+  signUpError,
+  signInError,
   failure
 }

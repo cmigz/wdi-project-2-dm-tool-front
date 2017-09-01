@@ -11,7 +11,7 @@ const onSignUp = function (event) {
   console.log(data)
   api.signUp(data)
     .done(ui.signUpSuccess)
-    .fail(ui.failure)
+    .fail(ui.signUpError)
 }
 
 const onSignIn = function (event) {
@@ -19,7 +19,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure)
+    .fail(ui.signInError)
 }
 
 const onSignOut = function (event) {
@@ -35,7 +35,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.failure)
+    .fail(ui.changePasswordError)
 }
 
 const onGetCampaigns = function (event) {
@@ -131,6 +131,7 @@ const addHandlers = () => {
   $('#delete-campaign').on('submit', onDeleteCampaign)
   $('#delete-encounter').on('submit', onDeleteEncounter)
   $('#oldUser').on('click', ui.hideSignUp)
+  $('#newUser').on('click', ui.hideSignIn)
   $('#chngPwd').on('click', ui.showChngPwd)
   $('#crtCamp').on('click', ui.showCreates)
   $('#viewCamp').on('click', ui.showViews)
