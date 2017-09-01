@@ -56,7 +56,7 @@ const changePasswordSuccess = () => {
 
 const changePasswordError = (error) => {
   console.error(error)
-  $('#change-password-error').removeClass('hidden')
+  $('#change-password-failure').removeClass('hidden')
 }
 
 const getCampaignsSuccess = (data) => {
