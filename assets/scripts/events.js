@@ -117,6 +117,10 @@ const onDeleteEncounter = function (event) {
     .fail(ui.failure)
 }
 
+const clearForms = () => {
+  $('input, textarea').val('')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -138,6 +142,7 @@ const addHandlers = () => {
   $('#editCamp').on('click', ui.showEdits)
   $('#deleteCamp').on('click', ui.showDeletes)
   $('.updated, .deleted, .created, .changed').on('click', ui.hidePops)
+  $('form').on('submit', clearForms)
 }
 module.exports = {
   addHandlers
