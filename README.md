@@ -1,16 +1,17 @@
 
-# Tic-Tac-Toe!
+# DM Tool
 ### By: Chris Kennelly
 
 ## Welcome to my Project!
 
-This Tic-Tac-Toe game showcases the skills I have gained through the first few weeks of General Assembly's Web Development Immersive program.
+This DM Tool game showcases the full stack development skills I have gained through the first half of General Assembly's Web Development Immersive program.
 
-By building a custom game engine and front end I have made a game that allows people to play 1 vs 1 local tic-tac-toe as well as login so they can keep track of their games.
+By building a
 
-## Deployed Link
+## Deployed Links
 
-https://chrisak.github.io/tic-tac-toe-project/
+Front: https://chrisak.github.io/wdi-project-2-dm-tool-front/
+Back: https://dm-tool-api.herokuapp.com/
 
 ## Tech
 
