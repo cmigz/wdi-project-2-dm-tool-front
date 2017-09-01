@@ -264,5 +264,6 @@ module.exports = {
   hideSignIn,
   signUpError,
   signInError,
+  changePasswordError,
   failure
 }
