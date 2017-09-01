@@ -50,7 +50,7 @@ const changePasswordSuccess = () => {
   console.log(app)
   $('.pswd-change-message').removeClass('hidden')
   $('.changed').removeClass('hidden')
-  $('#change-password-error').addClass('hidden')
+  $('#change-password-failure').addClass('hidden')
   $('#change-password').addClass('hidden')
 }
 
