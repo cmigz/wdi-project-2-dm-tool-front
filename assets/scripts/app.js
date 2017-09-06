@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  host: 'https://dm-tool-api.herokuapp.com/'
+  host: 'http://localhost:4741'
 }

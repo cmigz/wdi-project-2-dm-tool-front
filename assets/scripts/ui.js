@@ -8,11 +8,17 @@ const signUpSuccess = (data) => {
   $('#sign-up').addClass('hidden')
   $('#sign-in').removeClass('hidden')
   $('#sign-up-error').addClass('hidden')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirmation').val('')
 }
 
 const signUpError = (error) => {
   console.error(error)
   $('#sign-up-error').removeClass('hidden')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirmation').val('')
 }
 
 const signInSuccess = (data) => {
@@ -21,11 +27,14 @@ const signInSuccess = (data) => {
   $('#sign-in').addClass('hidden')
   $('#sign-out').removeClass('hidden')
   $('#sign-in-error').addClass('hidden')
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
 }
 
 const signInError = (error) => {
   console.error(error)
   $('#sign-in-error').removeClass('hidden')
+  $('#sign-in-password').val('')
 }
 
 const signOutSuccess = () => {
